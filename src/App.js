@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
+import Tesseract from 'tesseract.js';
 import './App.css';
 
+const loadData = async () => {
+const result = await Tesseract.recognize(
+  "https://tesseract.projectnaptha.com/img/eng_bw.png",
+  "eng",
+  { logger: m => console.log(m) }
+);
+console.log(result);
+};
+loadData();
+ 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1> Priyanka </h1>
     </div>
   );
 }
